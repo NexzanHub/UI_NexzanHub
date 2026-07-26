@@ -1,0 +1,49 @@
+-- ================================================================
+--  LOADSTRING LENGKAP - NEXZAN KEY SYSTEM
+--  UI kecil, rapi, modern, draggable
+--  Mode: Single (auto-copy link) / Multi (dropdown pilih link)
+-- ================================================================
+-- Cara pakai:
+-- 1. Buka Executor / Script
+-- 2. Copy dan paste kode di bawah ini
+-- 3. Ganti Mode, URL, Keys sesuai kebutuhan kamu
+-- ================================================================
+
+local KeyUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/NexzanHub/UI_NexzanHub/arena/019f9ebd-ui-nexzanhub/NexzanKeySystem.lua"))()
+
+KeyUI:Create({
+    Title = "NEXZAN HUB",
+    SubTitle = "Key Verification System",
+    Mode = "Single",          -- Ganti ke "Multi" jika ingin dropdown link
+    Size = "Compact",         -- "Compact" (kecil untuk mobil) atau "Normal"
+    -- Keys yang valid:
+    Keys = {"NEXZAN-HUB", "PREMIUM-2024", "KEY123"},
+    -- Untuk Mode "Single":
+    URL = "https://discord.gg/nexzanhub",
+    -- Untuk Mode "Multi" (dropdown):
+    -- URLs = {
+    --     ["Discord"] = "https://discord.gg/nexzanhub",
+    --     ["Work.ink"] = "https://work.ink/nexzan",
+    -- },
+    Accent = Color3.fromRGB(139, 92, 246), -- Ungu modern
+    OnSuccess = function(key)
+        -- Aksi saat key valid
+        print("Key valid:", key)
+    end,
+    OnFail = function()
+        -- Aksi saat key salah
+        print("Key salah!")
+    end,
+    AutoDestroy = true, -- Auto tutup setelah sukses
+})
+
+-- ================================================================
+-- CATATAN:
+-- - UI ini bisa digeser (drag) dengan header
+-- - Kecil (Compact) cocok untuk UI mobil / script kecil
+-- - Single: klik GetKey langsung copy link ke clipboard
+-- - Multi: klik GetKey muncul dropdown untuk pilih link,
+--         setelah pilih langsung copy & buka browser
+-- - Sudah di-upload ke repository:
+--   https://github.com/NexzanHub/UI_NexzanHub
+-- ================================================================
